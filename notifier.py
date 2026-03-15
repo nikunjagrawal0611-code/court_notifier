@@ -21,7 +21,17 @@ def send_telegram(msg):
 # 🔔 Send start notification
 send_telegram("🚀 Allahabad High Court cause-list notifier started checking...")
 
-driver = webdriver.Chrome()
+# Setup Chrome for GitHub Actions (headless mode)
+
+options = webdriver.ChromeOptions()
+options.add_argument("--headless=new")          # run without GUI
+options.add_argument("--no-sandbox")            # required for GitHub Linux runner
+options.add_argument("--disable-dev-shm-usage") # prevent memory crashes
+options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920,1080")
+
+driver = webdriver.Chrome(options=options)
+
 wait = WebDriverWait(driver, 20)
 
 driver.get("https://www.allahabadhighcourt.in/causelist/indexA.html")
