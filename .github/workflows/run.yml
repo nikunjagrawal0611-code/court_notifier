@@ -2,7 +2,7 @@ name: Court Notifier
 
 on:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 env:
