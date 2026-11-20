@@ -8,7 +8,6 @@ import fitz  # PyMuPDF
 import time
 import os
 
-
 CASE_NUMBER = "WRIC/45474/2023"
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
